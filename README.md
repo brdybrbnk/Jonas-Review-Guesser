@@ -3,6 +3,14 @@
 ## Overview
 Fork of Jonas Tyroller's Review Guesser that does a range of options instead of giving you potential values. This way your answer isn't primed based on the options given (it's usually the lowest option lmao)
 
+Suggested things I think would be cool but probably won't ever do because I don't wanna learn Javascript and I have my own stuff to work on:
+
+- A slider to estimate the reviews
+- Filter based on tags
+- Guess reviews based only on the capsule image
+- A correct answer tracker
+- Autofill 0 if it's a 2D pixel art platformer lol
+
 Jonas Review Guesser is a Chrome extension that turns Steam into a review guessing game. It hides the review count (and some other clues) on Steam store pages and asks you to guess the number of reviews instead. On top of that, it adds buttons at the top of the page that take you to completely random games on Steam, giving you a new way to browse the store, step outside your usual bubble, and gradually improve your intuition for how successful different games are.
 
 ![preview image](images/GuessExample.PNG)
