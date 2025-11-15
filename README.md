@@ -1,6 +1,7 @@
 # Jonas Review Guesser
 
 ## Overview
+Fork of Jonas Tyroller's Review Guesser that does a range of options instead of giving you potential values. This way your answer isn't primed based on the options given (it's usually the lowest option lmao)
 
 Jonas Review Guesser is a Chrome extension that turns Steam into a review guessing game. It hides the review count (and some other clues) on Steam store pages and asks you to guess the number of reviews instead. On top of that, it adds buttons at the top of the page that take you to completely random games on Steam, giving you a new way to browse the store, step outside your usual bubble, and gradually improve your intuition for how successful different games are.
 
