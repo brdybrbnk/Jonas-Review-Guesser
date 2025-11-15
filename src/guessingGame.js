@@ -155,13 +155,13 @@
     //
     // 5) Convert to array and shuffle so the correct answer isn’t in a fixed spot.
     //
-    const picks = [0,10,25,50,100,250,500,1000,2000]
+    const picks = [0,10,25,50,75,100,150,250,500,1000,2000,2001]
 
     return picks;
   }
 
 
-  function findCorrectAnswer(trueCount, picks) {
+function findCorrectAnswer(trueCount, picks) {
   if (trueCount > 2000) {
     return 2000;
   }
@@ -265,7 +265,7 @@
         const b = document.createElement("button");
         b.type = "button";
         b.dataset.value = String(val);
-        if (val == 2000) //Quality programming lmao this is the first time I've done js and also I have more important things to do
+        if (val == 2001) //Quality programming lmao this is the first time I've done js and also I have more important things to do
         {
           b.textContent = "\u{2265} " + formatNum(val)
         }
