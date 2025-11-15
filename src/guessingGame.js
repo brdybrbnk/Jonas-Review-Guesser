@@ -155,19 +155,26 @@
     //
     // 5) Convert to array and shuffle so the correct answer isn’t in a fixed spot.
     //
-    const picks = Array.from(answers);
-
-    for (let i = picks.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [picks[i], picks[j]] = [picks[j], picks[i]];
-    }
+    const picks = [0,10,25,50,100,250,500,1000,2000]
 
     return picks;
   }
 
 
+  function findCorrectAnswer(trueCount, picks) {
+  if (trueCount > 2000) {
+    return 2000;
+  }
+  
 
-
+  for (let i = 0; i < picks.length; i++) {
+    if (picks[i] >= trueCount) {
+      return picks[i];
+    }
+  }
+  
+  return picks[picks.length - 1];
+}
 
   function ensureLoadingWidget(container, appId) {
     let wrap = container.querySelector(
@@ -258,7 +265,15 @@
         const b = document.createElement("button");
         b.type = "button";
         b.dataset.value = String(val);
-        b.textContent = formatNum(val);
+        if (val == 2000) //Quality programming lmao this is the first time I've done js and also I have more important things to do
+          {
+            b.textContent = "> " + formatNum(val)
+          }
+          else
+          {
+            b.textContent = "< " + formatNum(val);
+          }
+
         btns.push(b);
         wrap.appendChild(b);
       });
@@ -269,13 +284,18 @@
         "Guess the All Reviews count (all languages).";
       wrap.appendChild(note);
 
-      const correct = trueCount;
+      const correct = findCorrectAnswer(trueCount, guesses);
       const mark = (picked) => {
         if (wrap.dataset.locked === "1") return;
         wrap.dataset.locked = "1";
         btns.forEach((btn) => {
           const val = parseInt(btn.dataset.value, 10);
-          if (val === correct) btn.classList.add("correct");
+          if (val === correct) 
+          {
+            btn.classList.add("correct");
+            btn.textContent = btn.textContent + " (" + formatNum(trueCount) + ")";
+          }
+            
           if (val === picked && val !== correct)
             btn.classList.add("wrong");
           btn.disabled = true;
