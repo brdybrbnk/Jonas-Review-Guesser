@@ -162,11 +162,6 @@
 
 
 function findCorrectAnswer(trueCount, picks) {
-  if (trueCount > 2000) {
-    return 2001;
-  }
-  
-
   for (let i = 0; i < picks.length; i++) {
     if (picks[i] >= trueCount) {
       return picks[i];
