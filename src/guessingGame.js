@@ -266,13 +266,17 @@
         b.type = "button";
         b.dataset.value = String(val);
         if (val == 2000) //Quality programming lmao this is the first time I've done js and also I have more important things to do
-          {
-            b.textContent = "> " + formatNum(val)
-          }
-          else
-          {
-            b.textContent = "< " + formatNum(val);
-          }
+        {
+          b.textContent = "\u{2265} " + formatNum(val)
+        }
+        else if (val == 0)
+        {
+          b.textContent = formatNum(val);
+        }
+        else
+        {
+          b.textContent = "\u{2264} " + formatNum(val);
+        }
 
         btns.push(b);
         wrap.appendChild(b);
