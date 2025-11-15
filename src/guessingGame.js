@@ -163,7 +163,7 @@
 
 function findCorrectAnswer(trueCount, picks) {
   if (trueCount > 2000) {
-    return 2000;
+    return 2001;
   }
   
 
